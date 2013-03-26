@@ -7,6 +7,7 @@
   "dependencies": {
     "express": "3.x",
     "coffee-script": "1.4.x",
-    "ejs": "latest"
+    "ejs": "latest",
+    "socket.io": "latest"
   }
 }
