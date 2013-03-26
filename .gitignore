@@ -161,3 +161,11 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+# add by qian private
+*.sublime-workspace
+/node_modules
+/components
+/public/btknorr-bootstrap
+/public/layerssss-todc-bootstrap
+/public/assets.*
