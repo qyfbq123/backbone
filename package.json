@@ -7,11 +7,6 @@
   "dependencies": {
     "express": "3.x",
     "coffee-script": "1.4.x",
-    "marked": "latest",
-    "jade": "latest",
-    "stylus": "latest",
-    "less": "latest",
-    "moment": "latest",
-    "component": "latest"
+    "ejs": "latest"
   }
 }
