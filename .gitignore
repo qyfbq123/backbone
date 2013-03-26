@@ -169,3 +169,4 @@ pip-log.txt
 /public/btknorr-bootstrap
 /public/layerssss-todc-bootstrap
 /public/assets.*
+*.log
