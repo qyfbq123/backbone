@@ -8,6 +8,8 @@
     "express": "3.x",
     "coffee-script": "1.4.x",
     "ejs": "latest",
-    "socket.io": "latest"
+    "socket.io": "latest",
+    "jade": "latest",
+    "less": "latest"
   }
 }
