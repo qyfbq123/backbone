@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <style type="text/css">
+      body{ background-color:#000; }
+
+      .stage{
+        -webkit-user-select:none;
+        margin:10em;
+      }
+
+      .stage .dice{
+        -webkit-animation:dice-an 8s linear infinite;
+        -webkit-transform-style:preserve-3d;
+        -webkit-transform:perspective(600px) rotateX(360deg) rotateY(0);
+        height:200px;
+        margin:0 auto;
+        position:relative;
+        width:200px;
+      }
+
+      @-webkit-keyframes dice-an{
+        50%{ -webkit-transform:perspective(600px) rotateX(0) rotateY(0); }
+        100%{ -webkit-transform:perspective(600px) rotateX(0) rotateY(360deg); }
+      }
+
+      .stage .face{
+        background-color:rgba(255,255,255,.17);
+        border:1px solid #ccc;
+        box-sizing:border-box;
+        color:rgba(255,255,255,.85);
+        font-size:10em;
+        height:100%;
+        left:0;
+        line-height:200px;
+        position:absolute;
+        text-align:center;
+        top:0;
+        -webkit-transition:-webkit-transform 1s;
+        width:100%;
+      }
+
+      .stage .face:nth-child(1){
+        -webkit-animation:face-an1 1s;
+        -webkit-transform:translateZ(100px);
+      }
+      .stage .dice:hover .face:nth-child(1){ -webkit-transform:translateZ(150px); }
+      @-webkit-keyframes face-an1{
+        from{ -webkit-transform:translateZ(200px); opacity:0; }
+      }
+
+      .stage .face:nth-child(2){
+        -webkit-animation:face-an2 1s;
+        -webkit-transform:rotateX(-90deg) translateZ(100px);
+      }
+      .stage .dice:hover .face:nth-child(2){ -webkit-transform:rotateX(-90deg) translateZ(150px); }
+      @-webkit-keyframes face-an2{
+        from{ -webkit-transform:rotateX(-90deg) translateZ(200px); opacity:0; }
+      }
+
+      .stage .face:nth-child(3){
+        -webkit-animation:face-an3 1s;
+        -webkit-transform:rotateX(-180deg) translateZ(100px);
+      }
+      .stage .dice:hover .face:nth-child(3){ -webkit-transform:rotateX(-180deg) translateZ(150px); }
+      @-webkit-keyframes face-an3{
+        from{ -webkit-transform:rotateX(-180deg) translateZ(200px); opacity:0; }
+      }
+
+      .stage .face:nth-child(4){
+        -webkit-animation:face-an4 1s;
+        -webkit-transform:rotateX(-270deg) translateZ(100px);
+      }
+      .stage .dice:hover .face:nth-child(4){ -webkit-transform:rotateX(-270deg) translateZ(150px); }
+      @-webkit-keyframes face-an4{
+        from{ -webkit-transform:rotateX(-270deg) translateZ(200px); opacity:0; }
+      }
+
+      .stage .face:nth-child(5){
+        -webkit-animation:face-an5 1s;
+        -webkit-transform:rotateY(-90deg) translateZ(100px);
+      }
+      .stage .dice:hover .face:nth-child(5){ -webkit-transform:rotateY(-90deg) translateZ(150px); }
+      @-webkit-keyframes face-an5{
+        from{ -webkit-transform:rotateY(-90deg) translateZ(200px); opacity:0; }
+      }
+
+      .stage .face:nth-child(6){
+        -webkit-animation:face-an6 1s;
+        -webkit-transform:rotateY(90deg) translateZ(100px);
+      }
+      .stage .dice:hover .face:nth-child(6){ -webkit-transform:rotateY(90deg) translateZ(150px); }
+      @-webkit-keyframes face-an6{
+        from{ -webkit-transform:rotateY(90deg) translateZ(200px); opacity:0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+  
+  <div class="dice">
+    <div class="face">1</div><!-- end face -->
+    <div class="face">2</div><!-- end face -->
+    <div class="face">3</div><!-- end face -->
+    <div class="face">4</div><!-- end face -->
+    <div class="face">5</div><!-- end face -->
+    <div class="face">6</div><!-- end face -->
+  </div><!-- end dice -->
+    
+</div><!-- end stage -->
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+  <script src="/jquery.js"></script>
+  <script src="/underscore.js"></script>
+  <script src="/backbone.js"></script>
+  <script>
+    window.onload = function(){
+      var A = Backbone.Model.extend({
+        title: "123",
+        "change:title": function() {
+          console.log('change title2');
+        }
+      });
+      var B = Backbone.View.extend({
+        tagName: "div",
+        el:"#test",
+        className: "test",
+        events: {
+          "click": "clickt"
+        },
+        clickt: function(t){
+          console.log("click T" + t);
+        },
+        render: function(){
+          this.$el.html(this.model.title);
+          return this;
+        },
+        initialize: function(){
+          _.bindAll(this, 'clickt');
+          this.render();
+        }
+      });
+      var a = new A();
+      // _.bindAll(a, 'change:title')
+      // a.on('change:title',function(){
+      //   console.log("change title");
+      // });
+      a.set('test1', 1);
+      console.log(a.get('test1'));
+      a.on('change',function(s){
+        console.log("total change" + s);
+      });
+      var b = new B({model: a});
+      $('#test').trigger('click');
+    }
+  </script>
+</head>
+<body>
+  Hello!
+  <div id="test"/>
+</body>
+</html>
