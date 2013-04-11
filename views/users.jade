@@ -1,0 +1,37 @@
+!!!5
+html
+	head
+		script(src='/jquery.js')
+		script(src='/underscore.js')
+		script(src='/backbone.js')
+		script(id='user', type='text/template')
+			<tr>
+			<td><%=name%></td>
+			</tr>
+		:coffeescript
+			$ ()->
+				$('#test').append _.template($('#user').text()) name:'test'
+				User = Backbone.View.extend
+					initialize: ->
+						_.bindAll(this, 'render')
+					template: _.template $('#user').text()
+					render: ->
+						$('#test').append this.template name: this.model.get 'name'
+						return this
+
+				UserModel = Backbone.Model.extend({})
+
+				a = new UserModel name: 'test1'
+				b = new UserModel name: 'test2'
+				c = new UserModel name: 'test3'
+				d = new User( model: a )
+				d.render()
+				d.remove()
+				new User( model: b ).render()
+				new User( model: c ).render()
+
+
+	body
+		table(id='test')
+			tr
+				td test1

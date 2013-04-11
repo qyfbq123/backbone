@@ -32,14 +32,19 @@
       });
       var a = new A();
       // _.bindAll(a, 'change:title')
-      // a.on('change:title',function(){
-      //   console.log("change title");
-      // });
+      a.on('change:title',function(model, e, f, g){
+        console.log("change title");
+        console.log(e);
+        console.log(f);
+        console.log(g);
+        return false;
+      });
       a.set('test1', 1);
       console.log(a.get('test1'));
-      a.on('change',function(s){
+      a.on('change',function(s, t){
         console.log("total change" + s);
       });
+      a.set('title', '234')
       var b = new B({model: a});
       $('#test').trigger('click');
     }

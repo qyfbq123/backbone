@@ -8,7 +8,7 @@ next = (err)->
 
 app = express()
 app.configure ->
-	app.set 'view engine', 'ejs'
+	app.set 'view engine', 'jade'
 	app.set 'views', path.join __dirname, 'views'
 	app.use express.logger 'dev'
 	app.use express.static path.join __dirname, 'public'
@@ -18,6 +18,9 @@ app.configure ->
 
 app.get '/', (req, res, next)->
 	res.render 'index'
+
+app.get '/users', (req, res, next)->
+	res.render 'users'
 
 server = http.createServer app
 server.listen 8080, '127.0.0.1', (err)->
